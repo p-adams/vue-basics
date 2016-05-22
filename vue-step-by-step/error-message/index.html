@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error Message Display w/Vue.JS</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="app">
+        <form>
+            <!--use Vue to only display error when textarea is empty-->
+            <span class="error" v-show="!message">
+                You must enter a message
+            </span>
+            <textarea v-model="message"></textarea>
+            <button type="submit" v-show="message">
+                Send Message
+            </button>
+        </form>
+        <pre>{{ $data | json}}</pre>
+    </div>
+    
+    
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

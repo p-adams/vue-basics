@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Handling w/Vue.JS</title>
+    <style>
+      .plan {
+        padding: 0.5em 0;
+    }
+
+      .planName {
+        display: inline-block;
+        width: 6em;
+    }
+
+    .planPrice {
+        display: inline-block;
+        width: 6em;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+       
+      <div v-for="plan in plans">
+         <!-- custom component -->
+         <!-- : Vue's way of binding an attr -->
+            <plan :plan="plan" :active.sync="active"></plan>
+         </div>
+    </div>
+    
+    <template id="plan-template">
+        <div>
+            
+            <span class="planName">{{ plan.name }}</span>
+            <span class="planPrice">{{ plan.price }}/month</span>
+            <button @click="setActivePlan"
+             v-show="plan.name !== active.name"
+            >
+                <!-- custom property -->
+                {{isUpgrade ? 'Upgrade' : 'Downgrade'}}
+                </button>
+                <span v-else>
+                    Current
+                </span>
+        </div>
+    </template>
+   
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

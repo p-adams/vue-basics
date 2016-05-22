@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error Message Display w/Vue.JS</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="app">
+        
+        <tasks :list="tasks"></tasks>
+       
+        
+    </div>
+    <template id="tasks-template">
+        <h1>My Tasks
+            <span v-show="remaining">({{ remaining }})</span>
+            </h1>
+         <ul v-show="list.length">
+           
+            <li :class="{'completed' : task.completed}"
+                v-for="task in list"
+                @click="task.completed = ! task.completed"
+            >
+              
+                {{task.body}}
+                <!-- click on x, remove task -->
+                <strong @click="deleteTask(task)">x</strong>
+            </li>
+        </ul>
+        <p v-else>No tasks yet!</p>
+        <button @click="clearCompleted">Clear Completed</button>
+    </template>
+    
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

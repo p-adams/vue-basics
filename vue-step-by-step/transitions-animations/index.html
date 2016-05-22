@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transitions and Animations</title>
+    <link rel="stylesheet" href="main.css">
+    
+</head>
+<body>
+    <div v-show="show" class="animated" transition="fade">
+        Hello world
+    </div>
+    <button @click="show = ! show">Toggle</button>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

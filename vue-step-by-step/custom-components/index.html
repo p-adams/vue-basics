@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error Message Display w/Vue.JS</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="app">
+        <!-- wrapper that illustrates what is being built. Allows
+        for many task-lists to be built-->
+        <tasks :list="tasks"></tasks>
+        <tasks :list="[{body: 'Eat cheesecake', completed: true}]"></tasks>
+        
+    </div>
+    <template id="tasks-template">
+         <ul>
+           
+            <li :class="{'completed' : task.completed}"
+                v-for="task in list"
+                @click="task.completed = ! task.completed"
+            >
+              
+                {{task.body}}
+            </li>
+        </ul>
+        
+    </template>
+    
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

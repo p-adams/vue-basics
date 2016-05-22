@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Getting Started with Vue.JS</title>
+</head>
+<body>
+    <!-- the view -->
+ <div id="myView">
+     <input type="text" v-model="title" id="title" name="title" >
+    <p>The author of {{title}} is {{name}}.</p>
+    <button v-on:click = "aClickHandler">Find Commentator</button>
+    <ul>
+        <li v-for="commentary in commentaries">{{commentary.title}}</li>
+    </ul>
+ </div>
+ <script src="node_modules/vue/dist/vue.js"></script>
+ <script src="main.js"></script>
+</body>
+<html>

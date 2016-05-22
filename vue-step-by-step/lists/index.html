@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error Message Display w/Vue.JS</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <!--only want line-through to be applied if
+            task in completed. We do this through binding
+            We also want to be able to toggle the line-through
+            so whatever task is clicked on gets the line-through
+            
+            -->
+            <li :class="{'completed' : task.completed}"
+                v-for="task in tasks"
+                @click="toggleTask(task)"
+            >
+                <!-- change it from {{task}}
+                to {{task.body}}-->
+                {{task.body}}
+            </li>
+        </ul>
+    
+    
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

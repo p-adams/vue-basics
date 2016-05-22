@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Handling w/Vue.JS</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="app">
+        <!-- custom tag that describes thing being built-->
+       <counter subject="Likes"></counter>
+       <counter subject="Dislikes"></counter>
+             
+         
+    </div>
+    <template id="counter-template">
+        <h1>{{subject}}</h1>
+        <button @click="count += 1">{{count}}</button>
+    </template>
+
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

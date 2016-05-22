@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Handling w/Vue.JS</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="app">
+       <form action="done.html" @submit.prevent="handleIt">
+           <button type="submit">
+               Submit Me!
+           </button>           
+       </form>       
+    </div>
+
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
